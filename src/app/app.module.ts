@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { BannerComponent } from './components/layout/banner.component';
+import { BannerComponent } from './components/home/banner.component';
+import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/layout/header.component';
 import { FooterComponent } from './components/layout/footer.component';
 import { Section1Component } from './components/home/section1.component';
 import { Section2Component } from './components/home/section2.component';
-import { HomeCompo } from './com  nts/home/home.component';
 
+@NgModule({
   declarations: [
     AppComponent,
     BannerComponent,
@@ -17,7 +18,7 @@ import { HomeCompo } from './com  nts/home/home.component';
     FooterComponent,
     Section1Component,
     Section2Component,
-  HomeComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule
