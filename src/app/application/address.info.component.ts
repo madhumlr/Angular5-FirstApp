@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-application',
-  templateUrl: './application.html',
+  selector: 'apply-address-info',
+  templateUrl: './address.info.html',
   styleUrls: []
 })
-export class ApplicationComponent implements OnInit {
+export class AddressInfoComponent implements OnInit {
 
   constructor() { }
 

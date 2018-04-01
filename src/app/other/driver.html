@@ -1,0 +1,113 @@
+<section class="section-gap banner-area">
+  <div class="overlay overlay-bg"></div>
+  <div class="container">
+    <h1>Drivers List</h1>
+    <div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="col-md-12">            
+            <form class="form-horizontal form-style" #driverForm="ngForm">
+              <div class="row">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Name</label>
+                  <div class="col-md-9 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input name="driver_name" [(ngModel)]="driver.name" placeholder="Driver Name"
+                             class="form-control" type="text" required #spy #driverName="ngModel" minlength="3" maxlength="20">
+                    </div>
+                    <validation-errors [control]="driverName"></validation-errors>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Address</label>
+                  <div class="col-md-9 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input name="driver_address" [(ngModel)]="driver.address1" placeholder="Address" class="form-control" type="text"
+                             #driverAddress="ngModel" required>
+                    </div>
+                    <div [hidden]="driverAddress.valid || driverAddress.pristine"
+                         class="alert alert-danger">
+                      Address is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Street</label>
+                  <div class="col-md-9 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input name="driver_street" [(ngModel)]="driver.street" placeholder="Street" class="form-control" type="text"
+                             #driverStreet="ngModel" required>
+                    </div>
+                    <div [hidden]="driverStreet.valid || driverStreet.pristine"
+                         class="alert alert-danger">
+                      Street is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">City</label>
+                  <div class="col-md-5 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input name="driver_city" [(ngModel)]="driver.city" placeholder="City" class="form-control" type="text"
+                             #driverCity="ngModel" required>
+                    </div>
+                    <div [hidden]="driverCity.valid || driverCity.pristine"
+                         class="alert alert-danger">
+                      City is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--<div class="row">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">State</label>
+                  <div class="col-md-5 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                      <state-list [selectedStateId]="driver.state" (onStateChanged)="onStateChanged($event)" id="statelist"></state-list>
+                      <input name="driver_state" placeholder="State" class="form-control" type="text">
+                    </div>
+                  </div>
+                </div>
+              </div>-->
+              <div class="row">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Phone Number</label>
+                  <div class="col-md-5 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                      <input name="driver_phone" [(ngModel)]="driver.phoneNumber" placeholder="Phone #" class="form-control" type="text">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <!-- Button -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label"></label>
+                  <div class="col-md-6">
+                    <button type="button" class="btn btn-warning" (click)="addDriver()" [disabled]="!driverForm.form.valid">
+                      Add <span class="glyphicon glyphicon-send"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <br>TODO: remove this: {{spy.className}}
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

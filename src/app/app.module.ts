@@ -11,6 +11,10 @@ import { FooterComponent } from './layout/footer.component';
 import { Section1Component } from './home/section1.component';
 import { Section2Component } from './home/section2.component';
 import { ApplicationComponent } from './application/application.component';
+import { PersonalInfoComponent } from './application/personal.info.component';
+import { AddressInfoComponent } from './application/address.info.component';
+import { DriverComponent } from './Other/driver.component';
+import { ValidationErrorsComponent } from './helpers/validation-errors';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { ApplicationComponent } from './application/application.component';
     Section1Component,
     Section2Component,
     HomeComponent,
-    ApplicationComponent
+    ApplicationComponent,
+    PersonalInfoComponent,
+    AddressInfoComponent,
+    DriverComponent,
+    ValidationErrorsComponent
   ],
   imports: [
     BrowserModule,
