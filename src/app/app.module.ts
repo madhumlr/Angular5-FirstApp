@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
+import { ReactiveFormsModule } from '@angular/forms';  // <-- #1 import module
+
 import { AppComponent } from './app.component';
 import { BannerComponent } from './home/banner.component';
 import { HomeComponent } from './home/home.component';
@@ -13,7 +15,8 @@ import { Section2Component } from './home/section2.component';
 import { ApplicationComponent } from './application/application.component';
 import { PersonalInfoComponent } from './application/personal.info.component';
 import { AddressInfoComponent } from './application/address.info.component';
-import { DriverComponent } from './Other/driver.component';
+import { TemplateComponent } from './Other/template.component';
+import { ReactiveComponent } from './Other/reactive.component';
 import { ValidationErrorsComponent } from './helpers/validation-errors';
 
 @NgModule({
@@ -28,13 +31,15 @@ import { ValidationErrorsComponent } from './helpers/validation-errors';
     ApplicationComponent,
     PersonalInfoComponent,
     AddressInfoComponent,
-    DriverComponent,
-    ValidationErrorsComponent
+    TemplateComponent,
+    ValidationErrorsComponent,
+    ReactiveComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,22 +1,22 @@
 <section class="section-gap banner-area">
   <div class="overlay overlay-bg"></div>
   <div class="container">
-    <h1>Drivers List</h1>
+    <h1>Users List</h1>
     <div>
       <div class="row">
         <div class="col-xs-12">
           <div class="col-md-12">            
-            <form class="form-horizontal form-style" #driverForm="ngForm">
+            <form class="form-horizontal form-style" #userForm="ngForm">
               <div class="row">
                 <div class="form-group">
                   <label class="col-md-3 control-label">Name</label>
                   <div class="col-md-9 inputGroupContainer">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                      <input name="driver_name" [(ngModel)]="driver.name" placeholder="Driver Name"
-                             class="form-control" type="text" required #spy #driverName="ngModel" minlength="3" maxlength="20">
+                      <input name="user_name" [(ngModel)]="user.name" placeholder="User Name"
+                             class="form-control" type="text" required #spy #userName="ngModel" minlength="3" maxlength="20">
                     </div>
-                    <validation-errors [control]="driverName"></validation-errors>
+                    <validation-errors [control]="userName"></validation-errors>
                   </div>
                 </div>
               </div>
@@ -26,10 +26,10 @@
                   <div class="col-md-9 inputGroupContainer">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                      <input name="driver_address" [(ngModel)]="driver.address1" placeholder="Address" class="form-control" type="text"
-                             #driverAddress="ngModel" required>
+                      <input name="user_address" [(ngModel)]="user.address1" placeholder="Address" class="form-control" type="text"
+                             #userAddress="ngModel" required>
                     </div>
-                    <div [hidden]="driverAddress.valid || driverAddress.pristine"
+                    <div [hidden]="userAddress.valid || userAddress.pristine"
                          class="alert alert-danger">
                       Address is required
                     </div>
@@ -42,10 +42,10 @@
                   <div class="col-md-9 inputGroupContainer">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                      <input name="driver_street" [(ngModel)]="driver.street" placeholder="Street" class="form-control" type="text"
-                             #driverStreet="ngModel" required>
+                      <input name="user_street" [(ngModel)]="user.street" placeholder="Street" class="form-control" type="text"
+                             #userStreet="ngModel" required>
                     </div>
-                    <div [hidden]="driverStreet.valid || driverStreet.pristine"
+                    <div [hidden]="userStreet.valid || userStreet.pristine"
                          class="alert alert-danger">
                       Street is required
                     </div>
@@ -58,10 +58,10 @@
                   <div class="col-md-5 inputGroupContainer">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                      <input name="driver_city" [(ngModel)]="driver.city" placeholder="City" class="form-control" type="text"
-                             #driverCity="ngModel" required>
+                      <input name="user_city" [(ngModel)]="user.city" placeholder="City" class="form-control" type="text"
+                             #userCity="ngModel" required>
                     </div>
-                    <div [hidden]="driverCity.valid || driverCity.pristine"
+                    <div [hidden]="userCity.valid || userCity.pristine"
                          class="alert alert-danger">
                       City is required
                     </div>
@@ -86,7 +86,7 @@
                   <div class="col-md-5 inputGroupContainer">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                      <input name="driver_phone" [(ngModel)]="driver.phoneNumber" placeholder="Phone #" class="form-control" type="text">
+                      <input name="user_phone" [(ngModel)]="user.phoneNumber" placeholder="Phone #" class="form-control" type="text">
                     </div>
                   </div>
                 </div>
@@ -97,7 +97,7 @@
                 <div class="form-group">
                   <label class="col-md-4 control-label"></label>
                   <div class="col-md-6">
-                    <button type="button" class="btn btn-warning" (click)="addDriver()" [disabled]="!driverForm.form.valid">
+                    <button type="button" class="btn btn-warning" (click)="addUser()" [disabled]="!userForm.form.valid">
                       Add <span class="glyphicon glyphicon-send"></span>
                     </button>
                   </div>

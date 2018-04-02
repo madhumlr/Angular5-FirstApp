@@ -1,4 +1,4 @@
-export class DriverModel {
+export class UserModel  {
   id: number;
   name: string;
   isDeleted: boolean;
