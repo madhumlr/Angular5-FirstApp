@@ -1,0 +1,65 @@
+<section>
+  <div class="container">
+    <h3>Personal Information</h3>
+    <div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="col-md-12">
+            <form [formGroup]="applicant.form"  class="form-horizontal form-style" novalidate>
+              <div formGroupName="personalInfo">
+                <div class="row">
+                  <div class="form-group">
+                    <label class="col-md-12 control-label">First Name</label>
+                    <div class="col-md-12 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input placeholder="First Name"
+                               class="form-control" type="text" formControlName="FirstName">
+                      </div>
+                      <div *ngIf="(applicant.form.get('personalInfo.FirstName').status == 'INVALID' && applicant.form.get('personalInfo.FirstName').touched)"
+                           class="alert alert-danger">
+                        First Name is required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                    <label class="col-md-12 control-label">Last Name</label>
+                    <div class="col-md-12 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input placeholder="Last Name" class="form-control" type="text"
+                               formControlName="LastName">
+                      </div>
+                      <div *ngIf="(applicant.form.get('personalInfo.LastName').status == 'INVALID' && applicant.form.get('personalInfo.LastName').touched)"
+                           class="alert alert-danger">
+                        Last Name is Requied
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                    <label class="col-md-12 control-label">Email Address</label>
+                    <div class="col-md-12 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input placeholder="Email Address" class="form-control" type="text"
+                               formControlName="EmailAddress">
+                      </div>
+                      <div *ngIf="(applicant.form.get('personalInfo.EmailAddress').status == 'INVALID' && applicant.form.get('personalInfo.EmailAddress').touched)"
+                           class="alert alert-danger">
+                        Street is Requied
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

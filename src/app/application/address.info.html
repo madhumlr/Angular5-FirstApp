@@ -1,3 +1,61 @@
-<div class="row">
-  Address Info here
-</div>
+<section>
+  <div class="container">
+    <h3>Address Information</h3>
+    <div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="col-md-12">
+            <form [formGroup]="applicant.form" class="form-horizontal form-style" novalidate>
+              <div formGroupName="addressInfo">
+                <div class="row">
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Address 1</label>
+                    <div class="col-md-9 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input placeholder="Address 1"
+                               class="form-control" type="text" formControlName="Address1">
+                      </div>
+                      <div *ngIf="(applicant.form.get('addressInfo.Address1').status == 'INVALID' && applicant.form.get('addressInfo.Address1').touched)"
+                           class="alert alert-danger">
+                        Address 1 is required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Address 2</label>
+                    <div class="col-md-9 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input placeholder="Address 2" class="form-control" type="text"
+                               formControlName="Address2">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">City</label>
+                    <div class="col-md-9 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input placeholder="City" class="form-control" type="text"
+                               formControlName="City">
+                      </div>
+                      <div *ngIf="(applicant.form.get('addressInfo.City').status == 'INVALID' && applicant.form.get('addressInfo.City').touched)"
+                           class="alert alert-danger">
+                        City is Requied
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

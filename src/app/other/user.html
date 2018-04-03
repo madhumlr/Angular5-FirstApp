@@ -1,0 +1,104 @@
+<section class="section-gap banner-area">
+  <div class="overlay overlay-bg"></div>
+  <div class="container">
+    <h1>Users</h1>
+    <div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="col-md-12">
+            <form [formGroup]="user.form" class="form-horizontal form-style" novalidate>
+              <div class="row">
+                <div class="form-group">
+                  <label class="col-md-2 control-label">Name</label>
+                  <div class="col-md-10 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input placeholder="User Name"
+                             class="form-control" type="text" formControlName="name">
+                    </div>
+                    <div *ngIf="(user.form.get('name').status == 'INVALID' && user.form.get('name').touched)"
+                         class="alert alert-danger">
+                      Name is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <label class="col-md-2 control-label">Address</label>
+                  <div class="col-md-10 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input name="user_address" placeholder="Address" class="form-control" type="text"
+                             formControlName="address1">
+                    </div>
+                    <div *ngIf="(user.form.get('address1').status == 'INVALID' && user.form.get('address1').touched)"
+                         class="alert alert-danger">
+                      Address is Requied
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <label class="col-md-2 control-label">Street</label>
+                  <div class="col-md-10 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input name="user_street" placeholder="Street" class="form-control" type="text"
+                             formControlName="street">
+                    </div>
+                    <div *ngIf="(user.form.get('street').status == 'INVALID' && user.form.get('street').touched)"
+                         class="alert alert-danger">
+                      Street is Requied
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <label class="col-md-2 control-label">City</label>
+                  <div class="col-md-10 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input name="user_city" formControlName="city" placeholder="City" class="form-control" type="text">
+                    </div>
+                    <div *ngIf="(user.form.get('city').status == 'INVALID' && user.form.get('city').touched)"
+                         class="alert alert-danger">
+                      City is Requied
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Phone Number</label>
+                  <div class="col-md-5 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                      <input name="user_phone" formControlName="phoneNumber" placeholder="Phone #" class="form-control" type="text">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group">
+                  <label class="col-md-4 control-label"></label>
+                  <div class="col-md-6">
+                    <button type="button" class="btn btn-warning" (click)="adduser()">
+                      Add <span class="glyphicon glyphicon-send"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <p>Form status: {{ user.form.value | json }}</p>
+              <p>Form status: {{ user.form.status | json }}</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

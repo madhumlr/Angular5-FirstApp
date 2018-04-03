@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Applicant } from '../models/applicant';
 
 @Component({
   selector: 'apply-personal-info',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: []
 })
 export class PersonalInfoComponent implements OnInit {
-
-  constructor() { }
+  @Input() applicant: Applicant;
+  constructor() {
+    
+  }
 
   ngOnInit() {
   }

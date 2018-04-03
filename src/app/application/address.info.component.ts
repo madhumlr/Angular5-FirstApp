@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Applicant } from '../models/applicant';
 
 @Component({
   selector: 'apply-address-info',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: []
 })
 export class AddressInfoComponent implements OnInit {
-
+  @Input() applicant: Applicant;
   constructor() { }
 
   ngOnInit() {
