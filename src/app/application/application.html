@@ -1,13 +1,26 @@
 <section class="section-gap banner-area">
-  <div class="overlay overlay-bg"></div>
+  <!--<div class="overlay overlay-bg"></div>-->
   <div class="container">
     <div class="row align-items-center">
       <div class="col-12">
-        <apply-personal-info></apply-personal-info>
-      </div>
-      <div class="col-12">
-        <apply-address-info></apply-address-info>
+        <h1>Application - Apply Here</h1>
       </div>
     </div>
+    <div class="row align-items-center">
+      <div class="col-12">
+        <apply-personal-info [applicant]="applicant"></apply-personal-info>
+      </div>
+      <div class="col-12">
+        <apply-address-info [applicant]="applicant"></apply-address-info>
+      </div>
+    </div>
+    <p>Form Data: {{ applicant.form.value | json }}</p>
+    <p>Applicant Form status: {{ applicant.form.status | json }}</p>
+    <p>Personal Form status: {{ applicant.form.get("personalInfo").status | json }}</p>
+    <p>Address Form status: {{ applicant.form.get("addressInfo").status | json }}</p>
+    <p>Events: {{applicant.personalInfo?.FirstName}}</p>
+    <p>Events: {{applicant.addressInfo?.Address1}}</p>
+    <button (click)="addApplicant()">Submit</button>
+    <button (click)="updateApplicant()">Update</button>
   </div>
 </section>

@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ApplicationComponent } from './application/application.component';
 import { TemplateComponent } from './Other/template.component';
 import { ReactiveComponent } from './Other/reactive.component';
+import { UserComponent } from './Other/user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'apply', component: ApplicationComponent },
   { path: 'template', component: TemplateComponent },
   { path: 'reactive', component: ReactiveComponent },
+  { path: 'user', component: UserComponent },
 ];
 
 @NgModule({

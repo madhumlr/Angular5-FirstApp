@@ -18,6 +18,7 @@ import { AddressInfoComponent } from './application/address.info.component';
 import { TemplateComponent } from './Other/template.component';
 import { ReactiveComponent } from './Other/reactive.component';
 import { ValidationErrorsComponent } from './helpers/validation-errors';
+import { UserComponent } from './Other/user.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ValidationErrorsComponent } from './helpers/validation-errors';
     AddressInfoComponent,
     TemplateComponent,
     ValidationErrorsComponent,
-    ReactiveComponent
+    ReactiveComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
