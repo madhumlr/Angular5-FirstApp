@@ -22,4 +22,13 @@ export class BaseModel {
   public updateForm() {
     this.form.patchValue(this);
   }
+
+  public setError(field: string, errorKey: string) {
+    this.form.get(field).setErrors({ [errorKey] : true });
+    this.form.get(field).markAsTouched();
+  }
+
+  public clearError(field: string){
+    this.form.get(field).setErrors(null);
+  }
 }

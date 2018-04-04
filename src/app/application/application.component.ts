@@ -32,4 +32,13 @@ export class ApplicationComponent implements OnInit {
     this.applicant.addressInfo.City = 'new city';
     this.applicant.updateForm();
   }
+
+  validatePromoCode(): void {
+    if (this.applicant.form.get('promoCode').valid) {
+      if (this.applicant.promoCode !== "NEWAPP") {
+        this.applicant.setError('promoCode', 'invalidPromoCode');
+        this.applicant.setError('personalInfo.FirstName', 'uniqueName');
+      }
+    }
+  }
 }

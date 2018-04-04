@@ -6,6 +6,29 @@
         <h1>Application - Apply Here</h1>
       </div>
     </div>
+    <div class="row align-items-center">      
+      <div class="col-5">
+        <section>
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12">
+                <form [formGroup]="applicant.form" class="form-horizontal form-style" novalidate>
+                  <div class="form-group">
+                    <label class="control-label">Promo Code</label>
+                    <div class="inputGroupContainer">
+                      <div class="input-group">
+                        <input placeholder="Promo Code" class="form-control" type="text" formControlName="promoCode">
+                      </div>
+                      <validation-errors [control]="applicant.form.get('promoCode')"></validation-errors>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
     <div class="row align-items-center">
       <div class="col-12">
         <apply-personal-info [applicant]="applicant"></apply-personal-info>
@@ -22,5 +45,6 @@
     <p>Events: {{applicant.addressInfo?.Address1}}</p>
     <button (click)="addApplicant()">Submit</button>
     <button (click)="updateApplicant()">Update</button>
+    <button (click)="validatePromoCode()">Verify Promo Code</button>
   </div>
 </section>

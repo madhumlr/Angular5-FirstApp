@@ -15,9 +15,10 @@ export class ValidationErrorsComponent {
     'pattern': (params) => 'The required pattern is: ' + params.requiredPattern,
     'years': (params) => params.message,
     'countryCity': (params) => params.message,
-    'uniqueName': (params) => params.message,
+    'uniqueName': (params) => 'Name should be Unique',
     'telephoneNumbers': (params) => params.message,
-    'telephoneNumber': (params) => params.message
+    'telephoneNumber': (params) => params.message,
+    'invalidPromoCode': (params) => 'You have entered invalid Promo Code'
   };
 
   @Input()
@@ -30,7 +31,6 @@ export class ValidationErrorsComponent {
   }
 
   listOfErrors(): string[] {
-    console.log(this.control)
     if (!this.control.errors) return null;
     var errorsList = Object.keys(this.control.errors)
       .map(field => this.getMessage(field, this.control.errors[field]));
