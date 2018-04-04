@@ -19,6 +19,8 @@ import { TemplateComponent } from './Other/template.component';
 import { ReactiveComponent } from './Other/reactive.component';
 import { ValidationErrorsComponent } from './helpers/validation-errors';
 import { UserComponent } from './Other/user.component';
+import { XevValidate } from './directives/error.directive';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { UserComponent } from './Other/user.component';
     TemplateComponent,
     ValidationErrorsComponent,
     ReactiveComponent,
-    UserComponent
+    UserComponent,
+    XevValidate
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { UserComponent } from './Other/user.component';
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ValidationErrorsComponent]
 })
 export class AppModule { }

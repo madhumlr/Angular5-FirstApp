@@ -13,12 +13,14 @@
                     <div class="col-md-12 inputGroupContainer">
                       <div class="input-group">
                         <input placeholder="First Name"
-                               class="form-control" type="text" formControlName="FirstName">
+                               class="form-control" type="text" formControlName="FirstName" xev-validate>
                       </div>
-                      <div *ngIf="(applicant.form.get('personalInfo.FirstName').status == 'INVALID' && applicant.form.get('personalInfo.FirstName').touched)"
-                           class="alert alert-danger">
-                        First Name is required
-                      </div>
+                      <!--<validation-errors [control]="applicant.form.get('personalInfo.FirstName')"></validation-errors>-->
+                      
+                      <!--<div *ngIf="(applicant.form.get('personalInfo.FirstName').status == 'INVALID' && applicant.form.get('personalInfo.FirstName').touched)"
+       class="alert alert-danger">
+    First Name is required
+  </div>-->
                     </div>
                   </div>
                 </div>
@@ -30,10 +32,11 @@
                         <input placeholder="Last Name" class="form-control" type="text"
                                formControlName="LastName">
                       </div>
-                      <div *ngIf="(applicant.form.get('personalInfo.LastName').status == 'INVALID' && applicant.form.get('personalInfo.LastName').touched)"
-                           class="alert alert-danger">
-                        Last Name is Requied
-                      </div>
+                      <validation-errors [control]="applicant.form.get('personalInfo.LastName')"></validation-errors>
+                      <!--<div *ngIf="(applicant.form.get('personalInfo.LastName').status == 'INVALID' && applicant.form.get('personalInfo.LastName').touched)"
+       class="alert alert-danger">
+    Last Name is Requied
+  </div>-->
                     </div>
                   </div>
                 </div>
@@ -45,10 +48,10 @@
                         <input placeholder="Email Address" class="form-control" type="text"
                                formControlName="EmailAddress">
                       </div>
-                      <div *ngIf="(applicant.form.get('personalInfo.EmailAddress').status == 'INVALID' && applicant.form.get('personalInfo.EmailAddress').touched)"
+                      <!--<div *ngIf="(applicant.form.get('personalInfo.EmailAddress').status == 'INVALID' && applicant.form.get('personalInfo.EmailAddress').touched)"
                            class="alert alert-danger">
                         Street is Requied
-                      </div>
+                      </div>-->
                     </div>
                   </div>
                 </div>

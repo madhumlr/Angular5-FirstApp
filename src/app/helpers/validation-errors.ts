@@ -24,13 +24,16 @@ export class ValidationErrorsComponent {
   private control: AbstractControlDirective | AbstractControl;
 
   shouldShowErrors(): boolean {
+    //console.log(this.control)
+    //console.log(this.control.errors)
+    //console.log(this.control.touched)
     return this.control &&
       this.control.errors &&
       (this.control.dirty || this.control.touched);
   }
 
   listOfErrors(): string[] {
-    console.log(this.control)
+    //console.log(this.control)
     if (!this.control.errors) return null;
     var errorsList = Object.keys(this.control.errors)
       .map(field => this.getMessage(field, this.control.errors[field]));
@@ -38,6 +41,7 @@ export class ValidationErrorsComponent {
   }
 
   private getMessage(type: string, params: any) {
+    console.log(params)
     return ValidationErrorsComponent.errorMessages[type](params);
   }
 
