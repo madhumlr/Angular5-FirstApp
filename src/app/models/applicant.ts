@@ -6,6 +6,7 @@ import { FormGroup, Validators } from "@angular/forms";
 export class Applicant extends BaseModel  {
   personalInfo: PersonalInfo;
   addressInfo: AddressInfo;
+  promoCode: string;
 
   constructor() {
     super();
@@ -15,6 +16,7 @@ export class Applicant extends BaseModel  {
 
   private CreateApplicantForm(): FormGroup {
     return this.fb.group({
+      promoCode: ['', Validators.required],
       personalInfo: this.fb.group({
         FirstName: ['', Validators.required],
         LastName: ['', Validators.required],
@@ -35,6 +37,7 @@ export class Applicant extends BaseModel  {
 
     // subscribe to the stream 
     bindingEvent$.subscribe(x => {
+      this.promoCode = x.promoCode;
       this.personalInfo = x.personalInfo;
       this.addressInfo = x.addressInfo;
     });
