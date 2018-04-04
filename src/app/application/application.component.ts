@@ -18,10 +18,14 @@ export class ApplicationComponent implements OnInit {
 
   addApplicant(): void {
     if (this.applicant.form.valid) {
+      if (this.applicant.personalInfo.FirstName === "test") {
+        this.applicant.setError('personalInfo.FirstName', 'uniqueName', true);        
+        return;
+      }
       console.log('submit');
     }
     else {
-      this.applicant.highlightErrors(this.applicant.form);
+      this.applicant.highlightErrors(this.applicant.form, true);
     }
   }
 
@@ -34,10 +38,10 @@ export class ApplicationComponent implements OnInit {
   }
 
   validatePromoCode(): void {
+    this.applicant.clearError('promoCode');
     if (this.applicant.form.get('promoCode').valid) {
       if (this.applicant.promoCode !== "NEWAPP") {
-        this.applicant.setError('promoCode', 'invalidPromoCode');
-        this.applicant.setError('personalInfo.FirstName', 'uniqueName');
+        this.applicant.setError('promoCode', 'invalidPromoCode', true);
       }
     }
   }
